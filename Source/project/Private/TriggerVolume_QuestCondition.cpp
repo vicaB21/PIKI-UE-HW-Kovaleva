@@ -36,7 +36,7 @@ void UTriggerVolume_QuestCondition::StartOverlap(AActor* OverlappedActor, AActor
 {
     if (OtherActor && OtherActor->ActorHasTag(OtherTag))
     {
-        bCompleted = true;
+        Complete();
     }
 }
 
@@ -44,6 +44,6 @@ void UTriggerVolume_QuestCondition::EndOverlap(AActor* OverlappedActor, AActor* 
 {
     if (OtherActor && OtherActor->ActorHasTag(OtherTag))
     {
-        bCompleted = true;
+        Complete();
     }
 }

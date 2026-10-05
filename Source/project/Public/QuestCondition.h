@@ -6,17 +6,24 @@
 #include "UObject/Object.h"
 #include "QuestCondition.generated.h"
 
+DECLARE_MULTICAST_DELEGATE(FOnQuestConditionCompleted)
 /**
- * 
+ *
  */
-UCLASS()
+UCLASS(Abstract, Blueprintable, BlueprintType)
 class PROJECT_API UQuestCondition : public UObject
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 public:
-  virtual void StartCondition() PURE_VIRTUAL(StartCondition, );
-  virtual void StopCondition() PURE_VIRTUAL(StopCondition, );
+    virtual void StartCondition() PURE_VIRTUAL(StartCondition,);
+    virtual void StopCondition()PURE_VIRTUAL(StopCondition,);
+    UFUNCTION(BlueprintCallable)
+    bool IsCompleted() const {return bCompleted;}
+    FOnQuestConditionCompleted OnQuestConditionCompleted;
 protected:
-  UPROPERTY(BlueprintReadOnly)
-  bool bCompleted = false;
+    
+    void Complete();
+private:
+    bool bCompleted =false;
+    
 };

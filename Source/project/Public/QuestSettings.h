@@ -8,17 +8,17 @@
 
 class UQuestCondition;
 /**
- * 
+ *
  */
 UCLASS()
 class PROJECT_API UQuestSettings : public UDataAsset
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 public:
-  UPROPERTY(EditAnywhere)
-  FText Name;
-  UPROPERTY(EditAnywhere)
-  TArray<TSubclassOf<UQuestCondition>> StartConditions;
-  UPROPERTY(EditAnywhere)
-  TArray<TSubclassOf<UQuestCondition>> EndConditions;
+    UPROPERTY(EditAnywhere)
+    FText Name;
+    UPROPERTY(EditAnywhere)
+    TArray<TSubclassOf<UQuestCondition>> StartConditions;
+    UPROPERTY(EditAnywhere)
+    TArray<TSubclassOf<UQuestCondition>> EndConditions;
 };
