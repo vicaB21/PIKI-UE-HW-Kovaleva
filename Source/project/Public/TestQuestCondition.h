@@ -4,8 +4,8 @@
 #include "QuestCondition.h"
 #include "TestQuestCondition.generated.h"
 
-UCLASS(BlueprintType, Blueprintable, EditInlineNew, DefaultToInstanced)
-class PROJECT_API UTestQuestCondition : public UQuestCondition
+UCLASS(BlueprintType, Blueprintable, EditInlineNew)
+class PRACTICE_API UTestQuestCondition : public UQuestCondition
 {
     GENERATED_BODY()
 public:
